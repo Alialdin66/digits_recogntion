@@ -8,9 +8,12 @@ authors = [
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "scikit-learn (>=1.7.2,<2.0.0)"
+    "scikit-learn (>=1.7.2,<2.0.0)",
+    "fastapi (>=0.121.2,<0.122.0)"
 ]
-
+includepackages = [
+    { include = "digits_recognition", from = "./scr" },
+]
 [tool.poetry]
 packages = [{include = "digits_recogntion", from = "src"}]
 
@@ -20,7 +23,8 @@ build-backend = "poetry.core.masonry.api"
 
 [dependency-groups]
 prod = [
-    "scikit-learn (>=1.7.2,<2.0.0)"
+    "scikit-learn (>=1.7.2,<2.0.0)",
+    "fastapi[standard] (>=0.121.2,<0.122.0)"
 ]
 dev = [
     "matplotlib (>=3.10.7,<4.0.0)",
